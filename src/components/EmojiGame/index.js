@@ -21,6 +21,7 @@ class EmojiGame extends Component {
   state = {
     clickedEmojis: [],
     isGameEnd: false,
+    score: 0,
     topScore: 0,
   }
 
@@ -45,10 +46,10 @@ class EmojiGame extends Component {
     }
   }
 
-  finishGameAndSetTopScore = newScore => {
-    const {topScore} = this.state
-    if (newScore > topScore) {
-      this.setState({topScore: newScore})
+  finishGameAndSetTopScore = () => {
+    const {score, topScore} = this.state
+    if (score > topScore) {
+      this.setState({topScore: score})
     }
     this.setIsGameEnd(true)
   }
